@@ -75,6 +75,11 @@ class ViewController: UIViewController {
         label.text = String(number)
     }
     
+    @IBAction func select0() {
+        number = number*10 + 0
+        label.text = String(number)
+    }
+    
     @IBAction func plus() {
         label.text = "0"
         operation = 1
@@ -106,27 +111,26 @@ class ViewController: UIViewController {
 
     
     @IBAction func equal() {
-        if operation == 1 {
-            label.text = String(number + number2)
+            if operation == 1 {
+                label.text = String(number + number2)
+            }
+            if operation == 2 {
+                label.text = String(number - number2)
+            }
+            if operation == 3 {
+                label.text = String(number * number2)
+            }
+            if operation == 4 {
+                label.text = String(number2 / number)
+            }
+            operation = 0
         }
-        if operation == 2 {
-            label.text = String(number2 - number)
-        }
-        if operation == 3 {
-            label.text = String(number*number2)
-        }
-        if operation == 4 {
-            label.text = String(number2 / number)
-        }
-        operation = 0
-    }
-    
+
     @IBAction func clear() {
         label.text = "0"
         number = 0
         number2 = 0
         operation = 0
         }
-    
     
 }
